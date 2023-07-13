@@ -1,13 +1,14 @@
 
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
+
 
 function App() {
     return (
-        <header>
-            <h1>Titulo</h1>
-            <p>Hola....</p>
-        </header>
-    )
+        <div>
+            <NavBar />
+        </div>
+
+    );
 }
 
 export default App;
