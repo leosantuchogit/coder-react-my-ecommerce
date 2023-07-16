@@ -1,6 +1,4 @@
 
-
-
 function ProductCard (props) {
 
     const {titulo, descripcion, img} = props;
@@ -15,7 +13,7 @@ function ProductCard (props) {
                 <a href="#" className="btn btn-primary">Agregar</a>
             </div>
         </div>
-        
+
     )
 
 } 
