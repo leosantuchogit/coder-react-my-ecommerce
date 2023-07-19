@@ -3,8 +3,8 @@ import BolsonFruta from "../ProductCard/assets/bolson-fruta.png";
 import BolsonVerdura from "../ProductCard/assets/bolson-verdura.png"
 import BolsonMixto from "../ProductCard/assets/bolson-mixto.png"
 
-const ItemListContainer = (props) => {
-    const {titulo, descripcion, imagen} = props;
+const ItemListContainer = () => {
+ 
     
     return (
         
