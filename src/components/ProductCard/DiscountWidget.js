@@ -1,14 +1,14 @@
-const DiscountWidget = ( discount ) => {
+const DiscountWidget = ( {discount} ) => {
 
-    return (
+    if (discount > 0) {
+        return (
 
-        <div>
-
-            <p>5%</p>
-
-        </div>
-
-    )
+            <div>
+                <span className="badge text-bg-danger" style={{fontSize: 16}}>-{discount}%</span>
+            </div>
+    
+        )
+    }
 
 } 
 

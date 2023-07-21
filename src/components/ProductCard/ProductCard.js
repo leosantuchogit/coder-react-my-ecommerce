@@ -2,6 +2,7 @@
 import ButtonItemCounter from "./ButtonItemCounter";
 import DiscountWidget from "./DiscountWidget";
 import FavoriteWidget from "../FavoriteWidget/FavoriteWidget";
+import RatingWidget from "../RatingWidget/RatingWidget";
 
 
 function ProductCard (props) {
@@ -17,8 +18,9 @@ function ProductCard (props) {
                 <h5 className="card-title">{ titulo }</h5>
                 <p className="card-text">{ descripcion }</p>
                 <ButtonItemCounter />
-                <DiscountWidget />
+                <DiscountWidget discount={5}/>
                 <FavoriteWidget />
+                <RatingWidget />
             </div>
 
 
