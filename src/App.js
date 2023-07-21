@@ -7,6 +7,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import Footer from "./components/Footer/Footer";
 
 
+
 function App() {
     return (
         <div>
@@ -14,6 +15,8 @@ function App() {
             <NavBar />            
             <ItemListContainer />
             <Footer />
+
+         
         
         </div>
 

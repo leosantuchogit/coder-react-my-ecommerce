@@ -1,5 +1,8 @@
 
 import ButtonItemCounter from "./ButtonItemCounter";
+import DiscountWidget from "./DiscountWidget";
+import FavoriteWidget from "../FavoriteWidget/FavoriteWidget";
+
 
 function ProductCard (props) {
 
@@ -14,11 +17,17 @@ function ProductCard (props) {
                 <h5 className="card-title">{ titulo }</h5>
                 <p className="card-text">{ descripcion }</p>
                 <ButtonItemCounter />
+                <DiscountWidget />
+                <FavoriteWidget />
             </div>
+
+
         </div>
         
     )
 
 } 
+
+
 
 export default ProductCard;
