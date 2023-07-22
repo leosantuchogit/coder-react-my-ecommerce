@@ -1,0 +1,10 @@
+
+/* Estilo para ubicar el button de descuento sobre la imagen */
+
+.product-card-img .button-discount {
+    position: absolute;
+    top: 5%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
