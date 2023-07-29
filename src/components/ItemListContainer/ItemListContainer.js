@@ -12,13 +12,13 @@ const ItemListContainer = () => {
         <div class="container p-5">
             <div class="row">
                 <div class="col-md">
-                     <ProductCard titulo="Bolson de Frutas" descripcion="Este bolson contiene frutas de estacion..." img={BolsonFruta} />
+                     <ProductCard titulo="Bolson de Frutas" descripcion="Este bolson contiene frutas de estacion..." precio="$2500" img={BolsonFruta} />
                 </div>
                 <div class="col-md">
-                    <ProductCard titulo="Bolson de verduras" descripcion="Este bolson contiene verduras de estacion..." img={BolsonVerdura} />
+                    <ProductCard titulo="Bolson de verduras" descripcion="Este bolson contiene verduras de estacion..." precio="$4500" img={BolsonVerdura} />
                 </div>
                 <div class="col-md">
-                    <ProductCard titulo="Bolson Mixto" descripcion="Este bolson contiene frutas y verduras de estacion..." img={BolsonMixto} />
+                    <ProductCard titulo="Bolson Mixto" descripcion="Este bolson contiene frutas y verduras de estacion..." precio="$3500" img={BolsonMixto} />
                 </div>
             </div>
         </div>

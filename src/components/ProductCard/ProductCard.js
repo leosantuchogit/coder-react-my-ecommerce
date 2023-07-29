@@ -5,10 +5,10 @@ import FavoriteWidget from "../FavoriteWidget/FavoriteWidget";
 import RatingWidget from "../RatingWidget/RatingWidget";
 import "./styles.css";
 
-function ProductCard (props) {
+function ProductCard (producto) {
 
 
-    const {titulo, descripcion, img} = props;
+    const {titulo, descripcion, precio, img} = producto;
 
     return (
 
@@ -23,6 +23,7 @@ function ProductCard (props) {
             <div className="card-body">
                 <h5 className="card-title">{ titulo }</h5>
                 <p className="card-text">{ descripcion }</p>
+                <p className="card-text">{ precio }</p>
                 <ButtonItemCounter />
                 <FavoriteWidget />
                 <RatingWidget />
