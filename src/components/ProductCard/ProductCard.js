@@ -3,7 +3,7 @@ import ButtonItemCounter from "./ButtonItemCounter";
 import DiscountWidget from "./DiscountWidget";
 import FavoriteWidget from "../FavoriteWidget/FavoriteWidget";
 import RatingWidget from "../RatingWidget/RatingWidget";
-import "./styles.css";
+import "./css/styles.css";
 
 function ProductCard (producto) {
 
