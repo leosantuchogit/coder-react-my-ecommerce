@@ -1,5 +1,6 @@
 
-import CartWidget from "../CartWidget/CartWidget"
+import CartWidget from "../CartWidget/CartWidget";
+import SearchBar from "../SearchBar/SearchBar";
 
 const NavBar = () => {
     return (
@@ -12,13 +13,13 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Tienda</a>
+                            <a className="nav-link active" aria-current="page" href="tienda">Tienda</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Entregas</a>
+                            <a className="nav-link" href="entrega">Entregas</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link">Contacto</a>
+                            <a className="nav-link" href="contacto" >Contacto</a>
                         </li>
                     </ul>
                 </div>

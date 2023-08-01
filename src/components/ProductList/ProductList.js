@@ -5,15 +5,32 @@ import BolsonMixto from "../ProductCard/assets/bolson-mixto.png"
 
 
 
-const ItemListContainer = ({productos}) => {
+const ProductList = ({productos}) => {
  
     const renderedProductos = productos.map((producto) => {
-        return  <ProductCard titulo="Bolson de Frutas" descripcion="Este bolson contiene frutas de estacion..." precio="$2500" img={BolsonFruta} />
+        return (
+           
+                <div className="col-sm-4">
+                    <ProductCard    key={producto.id} 
+                                    titulo={producto.alt_description}
+                                    descripcion={producto.description} 
+                                    precio="$2500" 
+                                    img={producto.urls.small} />
+                </div>
+            
+        )
+           
     })
 
-   console.log(renderedProductos);
+    console.log("renderProductos: ", renderedProductos);
 
-   return <div>{renderedProductos}</div>
+    return (
+            <div className="container p-5">
+                <div className="row">
+                    { renderedProductos }
+                </div>
+            </div>    
+    )
 
     // return (
         
@@ -40,4 +57,4 @@ const ItemListContainer = ({productos}) => {
 
 }
 
-export default ItemListContainer;
+export default ProductList;
