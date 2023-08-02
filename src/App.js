@@ -4,6 +4,10 @@ import "./styles.css";
 
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+
+
+import Carousel from "./components/Carousel/Carousel";
+
 import SearchBar from "./components/SearchBar/SearchBar";
 import searchImages from "./apis/unsplash";
 import { useState } from "react";
@@ -40,12 +44,16 @@ function App() {
         <BrowserRouter>
             <NavBar />
 
+            <div> <Carousel /> </div>
+            
             <Routes>
-                <Route path="/" element={<Home/>}/>
+            
+
+                {/* <Route path="/" element={<Home/>}/>
                 <Route path="home" element={<Home/>}/>
                 <Route path="Tienda" element={<Contacto/>}/>
                 <Route path="entrega" element={<Entrega/>}/>
-                <Route path="*" element={<Error/>}/>
+                <Route path="*" element={<Error/>}/> */}
 
                 {/* <div>
                     <SearchBar enSubmit = { handleSubmit } />
