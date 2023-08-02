@@ -21,19 +21,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 
-    const [productos, setProductos] = useState([]);
+    // const [productos, setProductos] = useState([]);
 
-    // = async function handleSubmit (term)
-    const handleSubmit = async (term) => {
+    // // = async function handleSubmit (term)
+    // const handleSubmit = async (term) => {
         
-        let resultado = await searchImages(term);
+    //     let resultado = await searchImages(term);
         
-        setProductos(resultado);
+    //     setProductos(resultado);
         
-        console.log(resultado);
-        // console.log(productos);
+    //     console.log(resultado);
+    //     // console.log(productos);
 
-    }
+    // }
 
     
     return (
@@ -42,8 +42,8 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="tienda" element={<Tienda/>}/>
-                <Route path="contacto" element={<Contacto/>}/>
+                <Route path="home" element={<Home/>}/>
+                <Route path="Tienda" element={<Contacto/>}/>
                 <Route path="entrega" element={<Entrega/>}/>
                 <Route path="*" element={<Error/>}/>
 
@@ -53,6 +53,8 @@ function App() {
                     <ProductList productos = { productos }/>
                     <Footer />
                 </div> */}
+
+                {/* <ProductList productos = { productos }/> */}
 
 
             </Routes>

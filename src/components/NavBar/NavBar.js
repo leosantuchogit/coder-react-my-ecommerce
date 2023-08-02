@@ -1,10 +1,28 @@
 
 import CartWidget from "../CartWidget/CartWidget";
-import SearchBar from "../SearchBar/SearchBar";
+
 import Login from "../LoginButton/LoginButton";
 import LoginButton from "../LoginButton/LoginButton";
+import SearchBar from "../SearchBar/SearchBar";
+import ProductList from "../ProductList/ProductList";
+
+import searchImages from "../../apis/unsplash";
+import { useState } from "react";
 
 const NavBar = () => {
+
+    
+    
+    const [productos, setProductos] = useState([]);
+    const handleSubmit = async (term) => {  // = async function handleSubmit (term)
+        
+        let resultado = await searchImages(term);
+        
+        setProductos(resultado);
+        
+        console.log(resultado);
+    }
+
     return (
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3" aria-label="Tenth navbar example">
@@ -30,7 +48,7 @@ const NavBar = () => {
           
 
                 <div className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <SearchBar />
+                    <SearchBar enSubmit = { handleSubmit } />
                 </div>
              
                
@@ -39,11 +57,7 @@ const NavBar = () => {
                     <CartWidget item = {5}/>
                 </div>
 
-                <div>
-                    {/* <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <i className="bi bi-person-circle fs-1 px-3" role="img" aria-label="Bootstrap"></i> 
-                    </a> */}
-
+                <div> 
                     <LoginButton />
                 </div>
                
