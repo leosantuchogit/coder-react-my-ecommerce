@@ -1,7 +1,6 @@
 import { useState, userState } from "react";
 
 
-
 const SearchBar = ( { enSubmit }) => {
 
     const [term, setTerm] = useState("");

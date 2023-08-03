@@ -1,9 +1,15 @@
-import { link } from "react-router-dom";
+
+import Banner from "../components/Banner/Banner";
+import ProductDestacado from "../components/ProductDestacado/ProductoDestacado";
+import Divider from "../components/Util/Divider";
 
 function Home() {
+
+
     return (
         <div>
-            <h1>Pagina Home</h1>
+            <Banner />
+            <ProductDestacado />
         </div>
     )
 }

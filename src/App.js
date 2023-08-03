@@ -11,13 +11,15 @@ import ProductList from "./components/ProductList/ProductList";
 
 import Home from "./pages/Home";
 import Tienda from "./pages/Tienda";
+import ProductoDetail from "./pages/ProductoDetail";
 import Entrega from "./pages/Entrega";
 import Contacto from "./pages/Contacto";
+import Ayuda from "./pages/Ayuda";
 import Error from "./pages/Error";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
+import Layout from "./pages/Layout";
 
 function App() {
 
@@ -38,28 +40,19 @@ function App() {
     
     return (
         <BrowserRouter>
-            <NavBar />
-
+           
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="home" element={<Home/>}/>
-                <Route path="Tienda" element={<Contacto/>}/>
-                <Route path="entrega" element={<Entrega/>}/>
-                <Route path="*" element={<Error/>}/>
-
-                {/* <div>
-                    <SearchBar enSubmit = { handleSubmit } />
-                    <NavBar />    
-                    <ProductList productos = { productos }/>
-                    <Footer />
-                </div> */}
-
-                {/* <ProductList productos = { productos }/> */}
-
-
+                <Route path="/" element={<Layout/>}>
+                    <Route index element={<Home/>}/> 
+                    <Route path="tienda" element={<Tienda/>}/>
+                    <Route path="productoDetail/:productoId" element={<ProductoDetail/>}/>
+                    <Route path="entrega" element={<Entrega/>}/>
+                    <Route path="contacto" element={<Contacto/>}/>
+                    <Route path="ayuda" element={<Ayuda/>}/>
+                    <Route path="*" element={<Error/>}/>
+                </Route>
             </Routes>
-
-            <Footer />
+     
         </BrowserRouter>
        
 

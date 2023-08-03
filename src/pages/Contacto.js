@@ -1,7 +1,10 @@
+import Contact from "../components/Contact/Contact";
+import Divider from "../components/Util/Divider";
+
 function Contacto() {
     return (
         <div>
-            <h1>Pagina Contacto</h1>
+            <Contact />
         </div>
     )
 }
