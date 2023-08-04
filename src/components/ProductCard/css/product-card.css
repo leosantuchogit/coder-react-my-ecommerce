@@ -1,5 +1,4 @@
 
-/* Estilo para ubicar el button de descuento sobre la imagen */
 
 .product-card .button-discount {
     position: absolute;
@@ -9,6 +8,19 @@
     -ms-transform: translate(-50%, -50%);
   }
 
-/* .product-card-precio {
-    color: green;
-} */
+  .product-card .button-favorite {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  .product-card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+  }
+
+  .link-no-decoration {
+    text-decoration: none;
+  }

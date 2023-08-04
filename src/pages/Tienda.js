@@ -1,20 +1,15 @@
 
 
-import { Link } from "react-router-dom";
-
 import listaProducto from "../data";
+import ProductList from "../components/ProductList/ProductList";
 
 
 function Tienda() {
-
-    console.log("estoy en page tienda");
-    console.log(listaProducto);
-
     return (
         <div>
-            <h1>Pagina Tienda</h1>
-
-            <div>
+            
+            <ProductList productos={listaProducto} />
+            {/* <div>
                 {listaProducto.map((producto)=>{
                     return (
                         <article key={ producto.id }>
@@ -25,7 +20,7 @@ function Tienda() {
                     )
                 }
                 )}
-            </div>
+            </div> */}
            
         </div>
     )
