@@ -33,7 +33,7 @@ const NavBar = () => {
                 <i className="bi bi-slack me-2 fs-3" role="img" aria-label="Bootstrap"></i>
             </a>
 
-            <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <ul className="nav col-12 col-lg-auto me-lg-auto px-3 mb-2 justify-content-center mb-md-0">
                 <li><Link className="nav-link px-2 text-white" to="/">Home</Link></li>  
                 <li><Link className="nav-link px-2 text-white" to="/tienda">Tienda</Link></li>
                 <li><Link className="nav-link px-2 text-white" to="/contacto">Contacto</Link></li>
