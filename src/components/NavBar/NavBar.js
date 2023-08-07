@@ -1,20 +1,17 @@
 
 import CartWidget from "../CartWidget/CartWidget";
-
-import Login from "../LoginButton/LoginButton";
 import LoginButton from "../LoginButton/LoginButton";
 import SearchBar from "../SearchBar/SearchBar";
-import ProductList from "../ProductList/ProductList";
 
 import searchImages from "../../apis/unsplash";
+
+import "./css/navbar.css";
+
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 
-import { Link } from "react-router-dom";
-
-const NavBar = () => {
-
-    
+const NavBar = () => {    
     
     const [productos, setProductos] = useState([]);
     const handleSubmit = async (term) => {  // = async function handleSubmit (term)
@@ -35,7 +32,27 @@ const NavBar = () => {
 
             <ul className="nav col-12 col-lg-auto me-lg-auto px-3 mb-2 justify-content-center mb-md-0">
                 <li><Link className="nav-link px-2 text-white" to="/">Home</Link></li>  
-                <li><Link className="nav-link px-2 text-white" to="/tienda">Tienda</Link></li>
+
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tienda
+                    </a>
+                    <ul className="dropdown-menu">
+                        <NavLink to={`/category/Men's clothing`} className="link-no-decoration" >
+                            <li><a className="dropdown-item">Men's clothing</a></li>
+                        </NavLink>
+                        <NavLink to={`/category/Jewelery`} className="link-no-decoration">
+                            <li><a className="dropdown-item">Jewelery</a></li>
+                        </NavLink>
+                        <NavLink to={`/category/Electronics`} className="link-no-decoration">
+                            <li><a className="dropdown-item">Electronics</a></li>
+                        </NavLink>
+                        <NavLink to={`/category/Women's clothing`} className="link-no-decoration">
+                            <li><a className="dropdown-item">Women's clothing</a></li>
+                        </NavLink>
+                    </ul>
+                </li>
+                
                 <li><Link className="nav-link px-2 text-white" to="/contacto">Contacto</Link></li>
                 <li><Link className="nav-link px-2 text-white" to="/ayuda">Ayuda</Link></li> 
             </ul>                    
@@ -52,30 +69,6 @@ const NavBar = () => {
                 <LoginButton />
             </div>
         </nav>
-
-
-    //   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        //   <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        //     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        //   </a>
-
-        //   <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        //     <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-        //     <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-        //     <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-        //     <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-        //     <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-        //   </ul>
-
-        //   <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-        //     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
-        //   </form>
-
-        //   <div class="text-end">
-        //     <button type="button" class="btn btn-outline-light me-2">Login</button>
-        //     <button type="button" class="btn btn-warning">Sign-up</button>
-        //   </div>
-    // </div>
   
     )
 }

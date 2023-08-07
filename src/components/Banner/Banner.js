@@ -1,6 +1,6 @@
 const Banner = () => {
     return (
-        <div className="p-5 text-center bg-body-tertiary">
+        <div className="p-5 text-center bg-info-subtle">
             <div className="container py-5">
                 <h1 className="text-body-emphasis">Página Home</h1>
                 <h1 className="text-body-emphasis">Banner informativo</h1>

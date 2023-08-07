@@ -1,0 +1,9 @@
+
+
+.product-detail .button-favorite {
+  position: absolute;
+  top: 7%;
+  left: 97%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}

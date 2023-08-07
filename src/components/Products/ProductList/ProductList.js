@@ -11,13 +11,14 @@ const ProductList = ({productos}) => {
                                     descripcion={producto.description} 
                                     precio={producto.price} 
                                     img={producto.image}
-                                    stock={producto.rating["count"]}
+                                    stock={producto.stock}
                                     discount="15" />
                 </div>
             
         )
            
     })
+
 
     // Presento todos los productos renderizados x ProductCard en la pantalla
     return (

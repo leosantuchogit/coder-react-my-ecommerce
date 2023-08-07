@@ -1,4 +1,9 @@
 
+.product-card .imagen {
+  height: 30vh;
+  object-fit: contain;
+}
+
 
 .product-card .button-discount {
     position: absolute;
