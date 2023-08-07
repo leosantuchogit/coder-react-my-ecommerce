@@ -12,7 +12,7 @@ const ProductList = ({productos}) => {
                                     precio={producto.price} 
                                     img={producto.image}
                                     stock={producto.stock}
-                                    discount="15" />
+                                    discount={producto.discount} />
                 </div>
             
         )

@@ -1,7 +1,7 @@
 
 import Banner from "../components/Banner/Banner";
 import ProductDestacado from "../components/Products/ProductDestacado/ProductoDestacado";
-import Divider from "../components/Util/Divider";
+import Divider from "../components/Util/DividerWidget/Divider";
 
 function Home() {
 

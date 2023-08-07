@@ -1,6 +1,6 @@
 
-import DiscountWidget from "./DiscountWidget";
-import FavoriteWidget from "../../FavoriteWidget/FavoriteWidget";
+import DiscountWidget from "../Widget/DiscountWidget";
+import FavoriteWidget from "../Widget/FavoriteWidget";
 
 import { Link } from "react-router-dom";
 

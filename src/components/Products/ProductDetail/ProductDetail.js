@@ -1,8 +1,8 @@
 
-import ButtonItemCounter from "../ProductCard/ButtonItemCounter"
-import ButtonAddCart from "../ProductCard/ButtonAddCart"
-import FavoriteWidget from "../../FavoriteWidget/FavoriteWidget";
-import DiscountWidget from "../ProductCard/DiscountWidget";
+import ButtonItemCounter from "../Widget/ButtonItemCounter"
+import ButtonAddCart from "../Widget/ButtonAddCart"
+import FavoriteWidget from "../Widget/FavoriteWidget";
+import DiscountWidget from "../Widget/DiscountWidget";
 
 import "./css/product-detail.css";
 

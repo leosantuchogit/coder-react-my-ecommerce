@@ -27,7 +27,7 @@ const ProductDetailContainer = () => {
                         precio={productos.price}
                         img={productos.image}
                         stock={productos.stock}
-                        discount="15"
+                        discount={productos.discount}
         />
         
     )
