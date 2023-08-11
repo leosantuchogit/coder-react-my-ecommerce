@@ -1,12 +1,13 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-const CartWidget = ({ item }) => {
+const CartButtonCounter = ({ item }) => {
     
     return (
         <div>
-     
+            <Link to="Cart">
             <button type="button" className="btn btn-primary position-relative">
 
                 <FontAwesomeIcon icon={faCartShopping} />
@@ -17,9 +18,9 @@ const CartWidget = ({ item }) => {
                 </span>
                 
             </button>
+            </Link>
         </div>    
     )
 }
 
-
-export default CartWidget
+export default CartButtonCounter

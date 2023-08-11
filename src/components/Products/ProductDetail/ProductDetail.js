@@ -3,10 +3,33 @@ import ButtonItemCounter from "../Widget/ButtonItemCounter"
 import ButtonAddCart from "../Widget/ButtonAddCart"
 import FavoriteWidget from "../Widget/FavoriteWidget";
 import DiscountWidget from "../Widget/DiscountWidget";
+import { CartContext } from "../../Cart/Context/CartContext";
 
 import "./css/product-detail.css";
+import { useState, useContext } from "react";
 
 const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount }) => {
+
+    const [quantityAdded, setQuantityAdded] = useState(0)
+
+    // const { addItem } = useContext(CartContext)
+
+    // Es un callback y esta funcion se ejecuta cuando hace click en el button "Agregar al carrito" que esta en el componente ButtonItemCounter
+    const handleOnAdd = (quantity) => {
+
+       
+        // Seteo la cantidad recibida
+        setQuantityAdded(quantity)
+
+        console.log("Productos agregados al carrito: ", quantity);
+
+        // const item = {
+        //     id, titulo, precio
+        // }
+
+        // Les paso el item y la cantidad al addItem que esta en el CartContext
+        // addItem(item, quantity)
+    }
     
     return (
         // <div className="card mb-3" style="max-width: 540px;">
@@ -27,8 +50,8 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount }
                     </div>
                     <div className="d-flex justify-content-start">
                         <div className="w-50 p-3">
-                            <ButtonItemCounter stock={ stock }/>
-                            <ButtonAddCart stock={ stock }/>
+                            <ButtonItemCounter initial={ 1 } stock={ stock } onAdd={ handleOnAdd }/>
+                            {/* <ButtonAddCart stock={ stock }/> */}
                         </div>
                     </div>
                 </div>

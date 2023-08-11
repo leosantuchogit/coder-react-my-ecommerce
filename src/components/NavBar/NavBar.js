@@ -1,5 +1,5 @@
 
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "../Cart/CartButtonCounter/CartButtonCounter";
 import LoginButton from "../LoginButton/LoginButton";
 import SearchBar from "../SearchBar/SearchBar";
 

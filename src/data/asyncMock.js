@@ -228,7 +228,7 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(productos)
-        }, 600)
+        }, 1600)
     })
 }
 
@@ -247,7 +247,7 @@ export const getProductsByCategory = (categoryId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(productos.filter(prod => prod.category.toLowerCase() === categoryId.toLowerCase()))
-        }, 400);
+        }, 1400);
     })
 }
 
