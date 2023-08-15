@@ -27,6 +27,12 @@ import Layout from "./pages/Layout";
 
 import ProductDetailContainer from "./components/Products/ProductDetailContainer/ProductDetailContainer"
 
+
+import { db } from "./config/firebase";
+import { getDocs, collection } from "firebase/firestore";
+import { useEffect, useState } from "react";
+
+
 function App() {
 
 
@@ -52,6 +58,38 @@ function App() {
     // return <Acordeon items={items}/>
 
 
+    // Ejemplo firebase
+
+    const [productosList, setProductosList] = useState([]); 
+    const productosCollectionRef = collection(db, "productos");
+
+    useEffect(() => {
+        const getProductosList = async ()=> {
+              const data = await getDocs(productosCollectionRef);
+              const filteredData = data.docs.map((doc)=>({...doc.data(), id:doc.id}))
+              console.log(filteredData);
+              setProductosList(filteredData);
+        }
+        getProductosList()
+    }, [])
+
+    // rederizo la lista de elementos 
+    return (
+        <div>
+            {productosList.map((item)=>(
+            <div key={ item.id }>
+                <h2>{ item.nombre }</h2>
+                <p>{ item.precio }</p>
+                <p>{ item.stock }</p>
+            </div>
+            ))}
+        </div>
+    )
+   
+
+
+/*
+
     return (
         <BrowserRouter>
             <CartProvider>
@@ -62,7 +100,7 @@ function App() {
                         <Route path="/category/:categoryId" element={<Tienda/>}/>
                         <Route path="/produtcto/:name" element={<Tienda/>}/>
                         <Route path="/producto/:productoId" element={<ProductDetailContainer/>}/>
-                        <Route path="cart" element={<CartPage/>}/>
+                        <Route path="/cart" element={<CartPage/>}/>
                         <Route path="entrega" element={<Entrega/>}/>
                         <Route path="contacto" element={<Contacto/>}/>
                         <Route path="ayuda" element={<Ayuda/>}/>
@@ -82,6 +120,7 @@ function App() {
         
     );
 
+    */
 
 }
 

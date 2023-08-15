@@ -1,12 +1,12 @@
-import CartList from "../components/Cart/CartContainer/CartContainer"
+import CartContainer from "../components/Cart/CartContainer/CartContainer"
 
 
-function Cart() {
+function CartPage() {
     return (
         <div>
-            <CartList />
+            <CartContainer />
         </div>
     )
 }
 
-export default Cart;
+export default CartPage;

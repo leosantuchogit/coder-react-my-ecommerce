@@ -9,14 +9,15 @@ const CartContainer = () => {
 
     const { cart, clearCart, totalQuantity, total } = useContext(CartContext)
 
+    console.log("Estoy en el componente CartContainer");
     console.log(totalQuantity);
+    console.log(cart);
 
-
-    // totalQuantity === 0
-    if (1 === 0) {
+   
+    if (totalQuantity === 0) {
         return (
           
-            <div className="p-5 text-center bg-info-subtle">
+            <div className="p-5 text-center bg-info-subtle" style={{height:"500px"}}>
                 <div className="container py-5">
                     <h1 className="text-body-emphasis">No hay ítems en el carrito</h1>
                     <Link to="/">Volver</Link>

@@ -2,8 +2,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
 
 const CartButtonCounter = ({ item }) => {
+
+    const { totalQuantity } = useContext(CartContext)
     
     return (
         <div>
@@ -13,7 +17,7 @@ const CartButtonCounter = ({ item }) => {
                 <FontAwesomeIcon icon={faCartShopping} />
                         
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    { item }
+                    { totalQuantity }
                     <span className="visually-hidden">Carrito</span>
                 </span>
                 

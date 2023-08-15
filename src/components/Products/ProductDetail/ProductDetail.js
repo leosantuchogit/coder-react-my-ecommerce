@@ -12,7 +12,7 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount }
 
     const [quantityAdded, setQuantityAdded] = useState(0)
 
-    // const { addItem } = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
 
     // Es un callback y esta funcion se ejecuta cuando hace click en el button "Agregar al carrito" que esta en el componente ButtonItemCounter
     const handleOnAdd = (quantity) => {
@@ -23,12 +23,13 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount }
 
         console.log("Productos agregados al carrito: ", quantity);
 
-        // const item = {
-        //     id, titulo, precio
-        // }
+        // Armo un objeto minimo que se va a agregar al carrito.
+        const item = {
+            id, titulo, precio
+        }
 
         // Les paso el item y la cantidad al addItem que esta en el CartContext
-        // addItem(item, quantity)
+        addItem(item, quantity)
     }
     
     return (
