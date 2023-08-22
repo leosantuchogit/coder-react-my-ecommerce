@@ -28,9 +28,11 @@ import Layout from "./pages/Layout";
 import ProductDetailContainer from "./components/Products/ProductDetailContainer/ProductDetailContainer"
 
 
-import { db } from "./config/firebase";
-import { getDocs, collection } from "firebase/firestore";
+import { db } from "./services/firebase/firebase";
+import { getDocs, collection, addDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
+
+import Auth from "./components/Auth/Auth";
 
 
 function App() {
@@ -63,32 +65,82 @@ function App() {
     const [productosList, setProductosList] = useState([]); 
     const productosCollectionRef = collection(db, "productos");
 
+    const [newProductNombre, setNewProductNombre] = useState("");
+    const [newProductPrecio, setNewProductPrecio] = useState("");
+    const [newProductStock, setNewProductStock] = useState("");
+    const [updateProductNombre, setUpdateProductNombre] = useState("");
+    const [udapteProductPrecio, setUpdateProductPrecio] = useState("");
+    const [updateProductStock, setUpdateProductStock] = useState("");
+
+
+    const getProductosList = async ()=> {
+        const data = await getDocs(productosCollectionRef);
+        const filteredData = data.docs.map((doc)=>({...doc.data(), id:doc.id}))
+        console.log(filteredData);
+        setProductosList(filteredData);
+  }
+
     useEffect(() => {
-        const getProductosList = async ()=> {
-              const data = await getDocs(productosCollectionRef);
-              const filteredData = data.docs.map((doc)=>({...doc.data(), id:doc.id}))
-              console.log(filteredData);
-              setProductosList(filteredData);
-        }
+        
         getProductosList()
     }, [])
 
+
+    const onSubmitNewProduct = async () => {
+        await addDoc(productosCollectionRef, {nombre:newProductNombre, precio:newProductPrecio, stock:newProductStock})
+        getProductosList();
+    }
+
+    const onSubmitDeleteProduct = async (id) => {
+        const productDoc = doc(db, "productos", id);
+        await deleteDoc(productDoc);
+        getProductosList();
+    }
+
+    const OnSubmitUpdateProduct = async(id) => {
+        const productDoc = doc(db, "productos", id);
+        await updateDoc(productDoc, {nombre:updateProductNombre});
+        getProductosList();
+    }
+
+    /*
+    
     // rederizo la lista de elementos 
     return (
         <div>
-            {productosList.map((item)=>(
-            <div key={ item.id }>
-                <h2>{ item.nombre }</h2>
-                <p>{ item.precio }</p>
-                <p>{ item.stock }</p>
+            <div>
+                <Auth />
             </div>
-            ))}
+            <div>
+                <h2>Nuevo producto</h2>
+                <input placeholder="Nombre" onChange={(e)=>setNewProductNombre(e.target.value)}/>
+                <input placeholder="Precio" onChange={(e)=>setNewProductPrecio(Number(e.target.value))}/>
+                <input placeholder="Stock"  onChange={(e)=>setNewProductStock(Number(e.target.value))}/>
+                <button onClick={ onSubmitNewProduct }>Enviar</button>
+            </div>
+
+            <div>
+                {productosList.map((item)=>(
+                <div key={ item.id }>
+                    <h2>{ item.title }</h2>
+                    <p>{ item.price }</p>
+                    <p>{ item.stock }</p>
+                    <button onClick={()=>onSubmitDeleteProduct(item.id) }>Borrar</button>
+               
+                    <input placeholder="Modificar" onChange={(e)=>setUpdateProductNombre(e.target.value)} />
+                    <button onClick={()=>OnSubmitUpdateProduct(item.id)}>Update</button>
+                </div>
+
+                ))}
+            </div>
+
+
         </div>
     )
    
+*/
 
 
-/*
 
     return (
         <BrowserRouter>
@@ -98,6 +150,7 @@ function App() {
                         <Route index element={<Home/>}/> 
                         <Route path="tienda" element={<Tienda/>}/>
                         <Route path="/category/:categoryId" element={<Tienda/>}/>
+                        <Route path="/title/:title" element={<Tienda/>}/>
                         <Route path="/produtcto/:name" element={<Tienda/>}/>
                         <Route path="/producto/:productoId" element={<ProductDetailContainer/>}/>
                         <Route path="/cart" element={<CartPage/>}/>
@@ -120,7 +173,7 @@ function App() {
         
     );
 
-    */
+    
 
 }
 

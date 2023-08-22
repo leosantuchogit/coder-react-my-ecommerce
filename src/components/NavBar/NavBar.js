@@ -17,6 +17,8 @@ const NavBar = () => {
     const handleSubmit = async (term) => {  // = async function handleSubmit (term)
         
         let resultado = await searchImages(term);
+
+        console.log(term);
         
         setProductos(resultado);
         
@@ -38,11 +40,11 @@ const NavBar = () => {
                         Tienda
                     </a>
                     <ul className="dropdown-menu">
-                        <NavLink to={`/category/Men's clothing`} className="link-no-decoration" >
-                            <li><a className="dropdown-item">Men's clothing</a></li>
+                        <NavLink to={`/category/Bolsones`} className="link-no-decoration" >
+                            <li><a className="dropdown-item">Bolsones</a></li>
                         </NavLink>
-                        <NavLink to={`/category/Jewelery`} className="link-no-decoration">
-                            <li><a className="dropdown-item">Jewelery</a></li>
+                        <NavLink to={`/category/Frutas`} className="link-no-decoration">
+                            <li><a className="dropdown-item">Frutas</a></li>
                         </NavLink>
                         <NavLink to={`/category/Electronics`} className="link-no-decoration">
                             <li><a className="dropdown-item">Electronics</a></li>

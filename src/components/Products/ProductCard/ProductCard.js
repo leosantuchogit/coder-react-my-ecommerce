@@ -4,12 +4,15 @@ import FavoriteWidget from "../Widget/FavoriteWidget";
 
 import { Link } from "react-router-dom";
 
+
+
 import "./css/product-card.css";
 
 
 function ProductCard (producto) {
-
+    
     const {id, titulo, descripcion, precio, img, stock, discount} = producto;
+
 
     return (
 

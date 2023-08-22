@@ -1,10 +1,15 @@
 
-import { getProducts, getProductsByCategory } from  "../../../data/asyncMock";
+// React
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Loader from "../../Util/Loader/Loader";
 
+// My components
+import Loader from "../../Util/Loader/Loader";
 import ProductList from "../ProductList/ProductList";
+
+// Firebase
+import { getDocs, collection, doc, query, where } from "firebase/firestore";
+import { db } from "../../../services/firebase/firebase";
 
 function ProductListContainer() {
 
@@ -13,21 +18,32 @@ function ProductListContainer() {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        const asynFunction = categoryId ? getProductsByCategory : getProducts
-        
+
         setLoading(true)
 
-        asynFunction(categoryId)
-            .then(response => {
-                setProductos(response)
-                setLoading(false)
-            })
-            .catch(error => {
-                console.error(error)
-                setLoading(false)
-            })
-        
-    }, [categoryId])
+        const collectionRef = categoryId 
+            ? query(collection(db, 'productos'), where('category', '==', categoryId))
+            : collection(db, 'productos')
+
+            getDocs(collectionRef)
+                .then(response => {
+                    const productsAdapted = response.docs.map(doc => {
+                        const data = doc.data()
+                        return {id: doc.id, ...data}
+                    })
+                    setProductos(productsAdapted)
+
+                    console.log(productsAdapted);
+   
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+                .finally(() => {
+                    setLoading(false)
+                })
+            }, [categoryId])
+
 
     return (
         <div> 
@@ -35,7 +51,7 @@ function ProductListContainer() {
                 loading ? (
                     <Loader />
                 ) : (
-                    <ProductList productos={productos} />
+                    <ProductList productos={ productos } />
                 )
             }
         </div>

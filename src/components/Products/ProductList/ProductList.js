@@ -1,6 +1,6 @@
 import ProductCard from "../ProductCard/ProductCard";
 
-const ProductList = ({productos}) => {
+const ProductList = ({ productos }) => {
  
     const renderedProductos = productos.map((producto) => {
         return (
