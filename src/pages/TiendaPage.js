@@ -1,12 +1,12 @@
 
 import ProductListContainer from "../components/Products/ProductListContainer/ProductListContainer";
 
-function Tienda() {
+function TiendaPage() {
 
     return (
         <ProductListContainer />
     )
 }
 
-export default Tienda;
+export default TiendaPage;
 

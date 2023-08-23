@@ -3,7 +3,7 @@ import CartWidget from "../Cart/CartButtonCounter/CartButtonCounter";
 import LoginButton from "../LoginButton/LoginButton";
 import SearchBar from "../SearchBar/SearchBar";
 
-import searchImages from "../../apis/unsplash";
+
 
 import "./css/navbar.css";
 
@@ -14,15 +14,13 @@ import { Link, NavLink } from "react-router-dom";
 const NavBar = () => {    
     
     const [productos, setProductos] = useState([]);
-    const handleSubmit = async (term) => {  // = async function handleSubmit (term)
+    
+    const handleSubmit = async (textSearch) => {  // = async function handleSubmit (term)
         
-        let resultado = await searchImages(term);
-
-        console.log(term);
+        // Hasta que me traigo el text buscó el usuario 
+        // en la input del componente SearchBar.js
+        console.log(textSearch);
         
-        setProductos(resultado);
-        
-        console.log(resultado);
     }
 
     return (
@@ -31,7 +29,6 @@ const NavBar = () => {
             <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                 <i className="bi bi-slack me-2 fs-3" role="img" aria-label="Bootstrap"></i>
             </a>
-
             <ul className="nav col-12 col-lg-auto me-lg-auto px-3 mb-2 justify-content-center mb-md-0">
                 <li><Link className="nav-link px-2 text-white" to="/">Home</Link></li>  
 
