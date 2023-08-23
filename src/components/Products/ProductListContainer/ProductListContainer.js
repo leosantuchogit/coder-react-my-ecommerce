@@ -13,7 +13,7 @@ import { db } from "../../../services/firebase/firebase";
 
 function ProductListContainer() {
 
-    const {categoryId} = useParams()
+    const {categoryId, input} = useParams()
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -31,9 +31,14 @@ function ProductListContainer() {
                         const data = doc.data()
                         return {id: doc.id, ...data}
                     })
-                    setProductos(productsAdapted)
 
-                    console.log(productsAdapted);
+                    const productsArray = input 
+                        ? productsAdapted.filter(item => item.title == input)
+                        : productsAdapted
+
+                    setProductos(productsArray)
+
+                    // console.log(productsAdapted);
    
                 })
                 .catch(error => {

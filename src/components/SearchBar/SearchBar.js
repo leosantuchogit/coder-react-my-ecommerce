@@ -1,32 +1,32 @@
 import { useState, userState } from "react";
+import { Link } from "react-router-dom";
 
 const SearchBar = ( { enSubmit }) => {
 
     const [textSearch, setTextSearch] = useState("");
 
-    function handleOnSubmitOnClick(e) {
+    // function handleOnSubmitOnClick(e) {
         
-        e.preventDefault(); // para que no se recargue la pagina
+    //     e.preventDefault(); // para que no se recargue la pagina
 
-        enSubmit (textSearch); // esto es un callback, le paso la variable de estado
-    }
+    //     enSubmit (textSearch); // esto es un callback, le paso la variable de estado
+    // }
 
     const handleChange = (e) => {
         setTextSearch(e.target.value);
     }
 
     return (
-        <form onSubmit={ handleOnSubmitOnClick }>
+       
             <div className="input-group">
                 <input type="text" value={ textSearch } onChange={ handleChange } className="form-control" placeholder="Buscar en la tienda..." aria-label="Buscar en la tienda..." aria-describedby="button-addon2" />
         
-                <button onClick={ handleOnSubmitOnClick } className="btn btn-secondary" type="button">
+                <Link to={"/busqueda/" + textSearch} className="btn btn-secondary" >
                     <i class="bi bi-search"></i>
-                </button>
+                </Link>
     
             </div>
-        </form>
-    
+                 
     )
 }
 

@@ -150,6 +150,7 @@ function App() {
                         <Route index element={<Home/>}/> 
                         <Route path="tienda" element={<TiendaPage/>}/>
                         <Route path="/category/:categoryId" element={<TiendaPage/>}/>
+                        <Route path="/busqueda/:input" element={<TiendaPage/>}/>
                         <Route path="/producto/:productoId" element={<ProductDetailContainer/>}/>
                         <Route path="/cart" element={<CartPage/>}/>
                         <Route path="entrega" element={<Entrega/>}/>

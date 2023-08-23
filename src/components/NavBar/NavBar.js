@@ -12,16 +12,6 @@ import { Link, NavLink } from "react-router-dom";
 
 
 const NavBar = () => {    
-    
-    const [productos, setProductos] = useState([]);
-    
-    const handleSubmit = async (textSearch) => {  // = async function handleSubmit (term)
-        
-        // Hasta que me traigo el text buscó el usuario 
-        // en la input del componente SearchBar.js
-        console.log(textSearch);
-        
-    }
 
     return (
 
@@ -57,7 +47,7 @@ const NavBar = () => {
             </ul>                    
     
             <div className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <SearchBar enSubmit = { handleSubmit } />
+                <SearchBar />
             </div>
             
             <div>
