@@ -47,7 +47,7 @@ function ProductListContainer() {
                 .finally(() => {
                     setLoading(false)
                 })
-            }, [categoryId])
+            }, [categoryId, input])
 
 
     return (

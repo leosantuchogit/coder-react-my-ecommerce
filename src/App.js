@@ -103,6 +103,8 @@ function App() {
         getProductosList();
     }
 
+    console.log("ENV:", process.env.REACT_APP_authDomain);
+
     /*
     
     // rederizo la lista de elementos 

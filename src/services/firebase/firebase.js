@@ -5,21 +5,18 @@ import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: process.env.REACT_APP_apiKey,
-//   authDomain: process.env.REACT_APP_authDomain ,
-//   projectId: process.env.REACT_APP_projectId ,
-//   storageBucket: process.env.REACT_APP_storageBucket ,
-//   messagingSenderId: process.env.REACT_APP_messagingSenderId ,
-//   appId: process.env.REACT_APP_appId 
-// };
-
 const firebaseConfig = {
   apiKey: "AIzaSyCXjcONKR70ZwgChoq5XmihlA2EjHKhQSg",
+  // apiKey: process.env.REACT_APP_apiKey, 
   authDomain: "my-ecommerce-coder-4cd52.firebaseapp.com",
+  // authDomain: process.env.REACT_APP_authDomain, 
   projectId: "my-ecommerce-coder-4cd52",
+  // projectId: process.env.REACT_APP_projectId, 
   storageBucket: "my-ecommerce-coder-4cd52.appspot.com",
+  // storageBucket: process.env.REACT_APP_storageBucket,
+  // messagingSenderId: process.env.REACT_APP_messagingSenderId,
   messagingSenderId: "1063204591632",
+  // appId: process.env.appId
   appId: "1:1063204591632:web:3586b1673083eb353fd295"
 };
 
