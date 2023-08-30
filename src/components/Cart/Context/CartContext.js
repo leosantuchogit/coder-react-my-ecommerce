@@ -5,19 +5,14 @@ export const CartContext = createContext({
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-
-    console.log("Componente CartContext - antes addItem: ", cart);
    
     const addItem = (item, quantity) => {
         if (!isInCart(item.id)) {
-            setCart(prev => [...prev, {...item, quantity}])
-
-           
+            setCart(prev => [...prev, {...item, quantity}]) // ... los tres puntos hace que ponga en el array lo que ya tenia + lo nuevo
 
         } else {
-            console.error("El producto ya fue agregado");
+            console.error("El producto ya fue agregado"); // buscar el item con el "indexOf" para agregar cantidad     
         }
-
 
     }    
 
@@ -35,7 +30,10 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
+        
         // Comparto todas las funciones a los componentes hijos: 
+        // Todo lo que pongo dentro del "value" lo voy a poder compartir con los children 
+
         <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>
             { children }
         </CartContext.Provider>

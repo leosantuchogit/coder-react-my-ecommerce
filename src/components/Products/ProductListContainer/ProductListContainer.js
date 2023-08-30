@@ -1,6 +1,6 @@
 
 // React
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // My components
@@ -11,11 +11,13 @@ import ProductList from "../ProductList/ProductList";
 import { getDocs, collection, doc, query, where } from "firebase/firestore";
 import { db } from "../../../services/firebase/firebase";
 
+
 function ProductListContainer() {
 
     const {categoryId, input} = useParams()
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(false)
+
 
     useEffect(() => {
 

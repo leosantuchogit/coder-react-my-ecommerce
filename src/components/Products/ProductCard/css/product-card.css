@@ -1,6 +1,6 @@
 
 .product-card .imagen {
-  height: 30vh;
+  /* height: 30vh; */
   object-fit: contain;
 }
 

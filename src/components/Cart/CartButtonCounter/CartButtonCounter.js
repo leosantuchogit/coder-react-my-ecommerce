@@ -7,7 +7,7 @@ import { CartContext } from "../Context/CartContext";
 
 const CartButtonCounter = ({ item }) => {
 
-    const { totalQuantity } = useContext(CartContext)
+    const { cart } = useContext(CartContext)
     
     return (
         <div>
@@ -17,7 +17,7 @@ const CartButtonCounter = ({ item }) => {
                 <FontAwesomeIcon icon={faCartShopping} />
                         
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    { totalQuantity }
+                    { cart.length }
                     <span className="visually-hidden">Carrito</span>
                 </span>
                 

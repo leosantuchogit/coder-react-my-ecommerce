@@ -1,4 +1,20 @@
-const CartPurcharseSummary = ({ itemQuantity, itemTotal, shippingTotal }) => {
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
+
+const CartPurcharseSummary = ({ shippingTotal }) => {
+
+    const { cart } = useContext(CartContext)
+    
+
+    // Calculo el total de todos los productos en el carrito 
+    const itemTotal = () => {
+        let suma = 0 
+        cart.forEach(element => {
+            suma += element.precio
+        });
+        return suma
+    }
+
 
     return (
         <div className="card shadow-sm border border-light-subtle">
@@ -8,10 +24,10 @@ const CartPurcharseSummary = ({ itemQuantity, itemTotal, shippingTotal }) => {
             <div className="card-body">
                 <div className="row">
                     <div className="col">
-                        <p className="card-title text-start">Productos ({ itemQuantity })</p>
+                        <p className="card-title text-start">Productos ({ cart.length })</p>
                     </div>
                     <div className="col">
-                        <p className="text-end fw-medium">${ itemTotal }</p>
+                        <p className="text-end fw-medium">${ itemTotal() }</p>
                     </div>
                 </div>
                 <div className="row">
@@ -27,7 +43,7 @@ const CartPurcharseSummary = ({ itemQuantity, itemTotal, shippingTotal }) => {
                         <h6 className="card-text text-start fs-5">Total</h6>
                     </div>
                     <div className="col">
-                        <h6 className="card-text text-end fs-6">${ (itemTotal + shippingTotal) }</h6>
+                        <h6 className="card-text text-end fs-6">${ (itemTotal() + shippingTotal) }</h6>
                     </div>
                 </div>
 
