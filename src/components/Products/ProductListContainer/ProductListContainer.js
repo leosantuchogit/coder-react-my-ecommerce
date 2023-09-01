@@ -28,7 +28,8 @@ function ProductListContainer() {
                     })
 
                     const productsArray = input 
-                        ? productsAdapted.filter(item => item.title == input)
+                        // ? productsAdapted.filter(item => item.title == input)
+                        ? productsAdapted.filter(item => `${item.title.toLowerCase()}`.includes(input.toLowerCase()))
                         : productsAdapted
 
                     setProductos(productsArray)

@@ -1,13 +1,15 @@
-// Exporta un item del carrito
+import { Link } from "react-router-dom";
 
 const CartItem = ({ item, removeItem }) => {
-
-    console.log("estoy en CartItem:", item);
     
     return (
         <li className="list-group-item">
             <div className="row">
-                <div className="col text-start">{ item.titulo }</div>
+                <div className="col text-start">
+                    <Link to={`/producto/${item.id}`}>
+                        { item.titulo }
+                    </Link>
+                </div>
                 <div className="col text-start">Cantidad: { item.quantity }</div>
                 <div className="col text-end">${ item.precio }</div>
                 <div className="col text-end">

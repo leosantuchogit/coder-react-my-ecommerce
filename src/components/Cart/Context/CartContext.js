@@ -12,6 +12,15 @@ export const CartProvider = ({ children }) => {
 
         } else {
             console.error("El producto ya fue agregado"); // buscar el item con el "indexOf" para agregar cantidad     
+        
+            setCart(cart.map((product)=>{
+                if(product.id === item.id){
+                    return {...product, quantity: product.quantity + quantity}
+                }else{
+                    return product
+                }
+            }))
+        
         }
 
     }    

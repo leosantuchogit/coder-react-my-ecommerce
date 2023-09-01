@@ -19,10 +19,7 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount, 
        
         // Seteo la cantidad recibida
         setQuantityAdded(quantity)
-
-        // console.log("Productos agregados al carrito: ", quantity, "nombre", titulo);
-        console.log("Producto en el carrito: ", titulo, "cantidad: ", quantity);
-
+        
         // Armo un objeto minimo que se va a agregar al carrito.
         const item = {
             id, titulo, precio
@@ -44,8 +41,7 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount, 
                         <div className="button-favorite">
                             <FavoriteWidget />
                         </div>
-
-                       
+       
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item">
                                     <Link to={`/category/${category}`}>
@@ -54,18 +50,19 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount, 
                                 </li>
                                 <li className="breadcrumb-item active" aria-current="page">{ titulo }</li>
                             </ol>
-               
 
                         <h5 className="card-title fw-bold">{ titulo }</h5>
                         <p className="card-text">{ descripcion }</p>
-                        <p className="card-text text-success fw-bold"><DiscountWidget discount={ discount }/> UD$ { precio } </p>
+                        <p className="card-text text-success fw-bold"><DiscountWidget discount={ discount }/>  ${ precio } </p>
                         <p className="card-text text-secondary fw-bold">Stock: { stock }</p>
                     </div>
+                    
                     <div className="d-flex justify-content-start">
                         <div className="w-50 p-3">
                             <ButtonItemCounter initial={ 1 } stock={ stock } onAdd={ handleOnAdd }/>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

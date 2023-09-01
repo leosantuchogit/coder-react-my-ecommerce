@@ -4,7 +4,7 @@ import "./styles.css";
 
 // Paginas
 import Home from "./pages/HomePage";
-import TiendaPage from "./pages/StorePage";
+import StorePage from "./pages/StorePage";
 import Entrega from "./pages/DeliveryPage";
 import Contacto from "./pages/ContactPage";
 import Ayuda from "./pages/HelpPage";
@@ -114,9 +114,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Layout/>}>
                         <Route index element={<Home/>}/> 
-                        <Route path="tienda" element={<TiendaPage/>}/>
-                        <Route path="/category/:categoryId" element={<TiendaPage/>}/>
-                        <Route path="/busqueda/:input" element={<TiendaPage/>}/>
+                        <Route path="tienda" element={<StorePage/>}/>
+                        <Route path="/category/:categoryId" element={<StorePage/>}/>
+                        <Route path="/busqueda/:input" element={<StorePage/>}/>
                         <Route path="/producto/:productoId" element={<ProductDetailContainer/>}/>
                         <Route path="/cart" element={<CartPage/>}/>
                         <Route path="/checkout" element={<CheckoutPage/>}/>
