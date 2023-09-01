@@ -1,9 +1,6 @@
 
 import SubscribeForm from "./SubscribeForm"
 
-
-
-
 const Section = () => {
     
     return (

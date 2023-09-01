@@ -10,24 +10,18 @@ import Contacto from "./pages/ContactPage";
 import Ayuda from "./pages/HelpPage";
 import Error from "./pages/ErrorPage";
 import CartPage from "./pages/CartPage";
-
-
-import { CartProvider } from "./components/Cart/Context/CartContext";
-
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import CheckoutPage from "./pages/CheckoutPage";
 import Layout from "./pages/Layout";
 
-import ProductDetailContainer from "./components/Products/ProductDetailContainer/ProductDetailContainer"
-
-
+import { CartProvider } from "./components/Cart/Context/CartContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { db } from "./services/firebase/firebase";
 import { getDocs, collection, addDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
+
+import ProductDetailContainer from "./components/Products/ProductDetailContainer/ProductDetailContainer"
 import Auth from "./components/Auth/Auth";
-import CheckoutPage from "./pages/CheckoutPage";
 
 
 function App() {
@@ -77,7 +71,7 @@ function App() {
 
     console.log("ENV:", process.env.REACT_APP_authDomain);
 
-    /*
+    /* EJEMPLO: ABM EN FIREBASE
     
     // rederizo la lista de elementos 
     return (
@@ -114,8 +108,6 @@ function App() {
    
 */
 
-
-
     return (
         <BrowserRouter>
             <CartProvider>
@@ -137,17 +129,9 @@ function App() {
             </CartProvider>
         </BrowserRouter>
         
-        // <DataProvider>
-        //     <div>
-        //         <ContextHijo1 />
-        //         <ContextHijo2 />   
-        //         <ContextHijo3 />   
-        //     </div>
-        // </DataProvider>
         
     );
 
-    
 
 }
 

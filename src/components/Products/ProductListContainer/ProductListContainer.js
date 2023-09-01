@@ -1,16 +1,9 @@
-
-// React
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
-// My components
 import Loader from "../../Util/Loader/Loader";
 import ProductList from "../ProductList/ProductList";
-
-// Firebase
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getDocs, collection, doc, query, where } from "firebase/firestore";
 import { db } from "../../../services/firebase/firebase";
-
 
 function ProductListContainer() {
 
@@ -40,8 +33,7 @@ function ProductListContainer() {
 
                     setProductos(productsArray)
 
-                    // console.log(productsAdapted);
-   
+
                 })
                 .catch(error => {
                     console.log(error);

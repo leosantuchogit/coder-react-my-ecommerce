@@ -1,13 +1,7 @@
-
+import "./css/product-card.css";
 import DiscountWidget from "../Widget/DiscountWidget";
 import FavoriteWidget from "../Widget/FavoriteWidget";
-
 import { Link } from "react-router-dom";
-
-
-
-import "./css/product-card.css";
-
 
 function ProductCard (producto) {
     

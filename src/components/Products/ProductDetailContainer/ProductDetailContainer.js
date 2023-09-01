@@ -1,14 +1,7 @@
-
-// React
-
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
-// My components
 import ProductDetail from "../ProductDetail/ProductDetail";
 import Loader from "../../Util/Loader/Loader";
-
-// Firebase 
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../../../services/firebase/firebase";
 

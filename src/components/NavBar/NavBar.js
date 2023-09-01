@@ -1,15 +1,8 @@
-
 import CartButtonCounter from "../Cart/CartButtonCounter/CartButtonCounter";
 import LoginButton from "../LoginButton/LoginButton";
 import SearchBar from "../SearchBar/SearchBar";
-
-
-
-import "./css/navbar.css";
-
-import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import "./css/navbar.css";
 
 const NavBar = () => {    
 

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 const TimerWidget = ({second = 60}) => {

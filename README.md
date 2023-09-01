@@ -5,7 +5,7 @@ Este proyecto fue desarrollado de acuerdo a los conocimientos adquiridos en el c
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Funcionalidad del siio
+## Funcionalidad del sitio
 
 Este sitio contiene las siguientes funcionalidades:
 - Navegación entre destintas paginas 

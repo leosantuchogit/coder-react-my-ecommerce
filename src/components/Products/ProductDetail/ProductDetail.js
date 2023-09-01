@@ -1,4 +1,3 @@
-
 import "./css/product-detail.css";
 import ButtonItemCounter from "../Widget/ButtonItemCounter"
 import FavoriteWidget from "../Widget/FavoriteWidget";

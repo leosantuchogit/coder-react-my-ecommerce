@@ -5,13 +5,6 @@ const SearchBar = ( { enSubmit }) => {
 
     const [textSearch, setTextSearch] = useState("");
 
-    // function handleOnSubmitOnClick(e) {
-        
-    //     e.preventDefault(); // para que no se recargue la pagina
-
-    //     enSubmit (textSearch); // esto es un callback, le paso la variable de estado
-    // }
-
     const handleChange = (e) => {
         setTextSearch(e.target.value);
     }
