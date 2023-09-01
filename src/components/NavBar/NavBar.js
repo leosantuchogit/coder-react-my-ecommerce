@@ -1,5 +1,5 @@
 
-import CartWidget from "../Cart/CartButtonCounter/CartButtonCounter";
+import CartButtonCounter from "../Cart/CartButtonCounter/CartButtonCounter";
 import LoginButton from "../LoginButton/LoginButton";
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -33,11 +33,8 @@ const NavBar = () => {
                         <NavLink to={`/category/Frutas`} className="link-no-decoration">
                             <li><a className="dropdown-item">Frutas</a></li>
                         </NavLink>
-                        <NavLink to={`/category/Electronics`} className="link-no-decoration">
-                            <li><a className="dropdown-item">Electronics</a></li>
-                        </NavLink>
-                        <NavLink to={`/category/Women's clothing`} className="link-no-decoration">
-                            <li><a className="dropdown-item">Women's clothing</a></li>
+                        <NavLink to={`/category/Verduras`} className="link-no-decoration">
+                            <li><a className="dropdown-item">Verduras</a></li>
                         </NavLink>
                     </ul>
                 </li>
@@ -51,7 +48,7 @@ const NavBar = () => {
             </div>
             
             <div>
-                <CartWidget item = {5}/>
+                <CartButtonCounter />
             </div>
 
             <div> 

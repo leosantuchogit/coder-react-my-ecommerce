@@ -3,20 +3,14 @@
 import "./styles.css";
 
 // Paginas
-import Home from "./pages/Home";
-import TiendaPage from "./pages/TiendaPage";
-import Entrega from "./pages/Entrega";
-import Contacto from "./pages/Contacto";
-import Ayuda from "./pages/Ayuda";
-import Error from "./pages/Error";
+import Home from "./pages/HomePage";
+import TiendaPage from "./pages/StorePage";
+import Entrega from "./pages/DeliveryPage";
+import Contacto from "./pages/ContactPage";
+import Ayuda from "./pages/HelpPage";
+import Error from "./pages/ErrorPage";
 import CartPage from "./pages/CartPage";
 
-import ContextHijo1 from "./components/ContextExamples/ContextHijo1"
-import ContextHijo2 from "./components/ContextExamples/ContextHijo2"
-import ContextHijo3 from "./components/ContextExamples/ContextHijo3"
-import { DataProvider  } from "./context/DataContext";
-
-import Acordeon from "./components/Acordeon/Acordeon";
 
 import { CartProvider } from "./components/Cart/Context/CartContext";
 
@@ -33,34 +27,12 @@ import { getDocs, collection, addDoc, deleteDoc, doc, updateDoc } from "firebase
 import { useEffect, useState } from "react";
 
 import Auth from "./components/Auth/Auth";
+import CheckoutPage from "./pages/CheckoutPage";
 
 
 function App() {
 
 
-    // // ejemplo de acordion (clase 12)
-    // const items = [
-    //     {
-    //         id: 1,
-    //         label:"Frases de Homer", 
-    //         content:"Estupido y sensual Flanders"
-    //     }, 
-    //    {
-    //     id:2,
-    //     label:"Frases de Milhouse",
-    //     content:"¿Te acuerdas de Alf? Volvio! En forma de fichas!"
-    //    }, 
-    //    {
-    //     id:3,
-    //     label:"Frases de Bart",
-    //     content:"Yo no fui!"
-    //    } 
-    // ]
-
-    // return <Acordeon items={items}/>
-
-
-    // Ejemplo firebase
 
     const [productosList, setProductosList] = useState([]); 
     const productosCollectionRef = collection(db, "productos");
@@ -155,6 +127,7 @@ function App() {
                         <Route path="/busqueda/:input" element={<TiendaPage/>}/>
                         <Route path="/producto/:productoId" element={<ProductDetailContainer/>}/>
                         <Route path="/cart" element={<CartPage/>}/>
+                        <Route path="/checkout" element={<CheckoutPage/>}/>
                         <Route path="entrega" element={<Entrega/>}/>
                         <Route path="contacto" element={<Contacto/>}/>
                         <Route path="ayuda" element={<Ayuda/>}/>

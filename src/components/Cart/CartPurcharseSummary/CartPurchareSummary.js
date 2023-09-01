@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
 
 const CartPurcharseSummary = ({ shippingTotal }) => {
@@ -46,8 +47,9 @@ const CartPurcharseSummary = ({ shippingTotal }) => {
                         <h6 className="card-text text-end fs-6">${ (itemTotal() + shippingTotal) }</h6>
                     </div>
                 </div>
-
-                <a href="#" className="btn btn-primary w-100 mt-3">Finalizar compra</a>
+                <Link to="/checkout">
+                    <a className="btn btn-primary w-100 mt-3">Finalizar compra</a>
+                </Link>
             </div>
         </div>
     )

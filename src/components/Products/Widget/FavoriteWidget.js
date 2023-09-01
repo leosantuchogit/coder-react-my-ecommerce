@@ -13,9 +13,9 @@ const FavoriteWidget = () => {
 
                 {
                     bookmark ? (
-                        <i className="bi bi-heart-fill" style={{fontSize: 24, color: 'red', cursor:'pointer'}}></i>
+                        <i className="bi bi-heart-fill" style={{fontSize: 24, color:'red', cursor:'pointer'}}></i>
                     ) : (
-                        <i className="bi bi-heart" style={{fontSize: 24, cursor:'pointer'}}></i>
+                        <i className="bi bi-heart-fill" style={{fontSize: 24, color:'white', cursor:'pointer'}}></i>
                     )
                 }
 

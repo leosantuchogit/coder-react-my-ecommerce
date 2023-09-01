@@ -1,8 +1,6 @@
-
 import { Link } from "react-router-dom";
 
-
-function Entrega() {
+function DeliveryPage() {
     return (
         <div>
             <h1>Pagina Entrega</h1>
@@ -13,5 +11,5 @@ function Entrega() {
     )
 }
 
-export default Entrega;
+export default DeliveryPage;
 

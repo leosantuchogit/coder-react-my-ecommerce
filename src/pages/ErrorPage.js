@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Error() {
+function ErrorPage() {
     return (
         <div>
            <div className="p-5 text-center  bg-info-subtle">
@@ -18,4 +18,4 @@ function Error() {
     )
 }
 
-export default Error;
+export default ErrorPage;

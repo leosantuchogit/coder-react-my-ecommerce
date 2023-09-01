@@ -1,6 +1,6 @@
 
 // React
-import { getProductsById } from "../../../data/asyncMock";
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -51,6 +51,7 @@ const ProductDetailContainer = () => {
                                     img={productos.image}
                                     stock={productos.stock}
                                     discount={productos.discount}
+                                    category={productos.category}
                     />
                 )
             }

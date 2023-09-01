@@ -7,16 +7,16 @@
 
 .product-card .button-discount {
     position: absolute;
-    top: 5%;
-    left: 85%;
+    top: 8%;
+    left: 83%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
   }
 
   .product-card .button-favorite {
     position: absolute;
-    top: 5%;
-    left: 10%;
+    top: 8%;
+    left: 12%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
   }

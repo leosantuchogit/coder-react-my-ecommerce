@@ -1,6 +1,6 @@
 import Help from "../components/Help/Help";
 
-function Ayuda() {
+function HelpPage() {
     return (
         <div>
             <Help />
@@ -8,4 +8,4 @@ function Ayuda() {
     )
 }
 
-export default Ayuda;
+export default HelpPage;

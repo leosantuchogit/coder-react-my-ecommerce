@@ -1,14 +1,13 @@
 
+import "./css/product-detail.css";
 import ButtonItemCounter from "../Widget/ButtonItemCounter"
-import ButtonAddCart from "../Widget/ButtonAddCart"
 import FavoriteWidget from "../Widget/FavoriteWidget";
 import DiscountWidget from "../Widget/DiscountWidget";
 import { CartContext } from "../../Cart/Context/CartContext";
-
-import "./css/product-detail.css";
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
-const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount }) => {
+const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount, category }) => {
 
     const [quantityAdded, setQuantityAdded] = useState(0)
 
@@ -37,15 +36,27 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount }
     return (
         // <div className="card mb-3" style="max-width: 540px;">
         <div className="card mb-3 m-3 product-detail">
-            <div class="row g-0">
+            <div className="row g-0">
                 <div className="col-md-4">
-                    <img src= { img } className="img-fluid rounded-start p-5" alt="imagen"/>
+                    <img src= { img } className="img-fluid rounded-start p-0" alt="imagen"/>
                 </div>
                 <div className="col-md-8 border-start" >
                     <div className="card-body">
                         <div className="button-favorite">
                             <FavoriteWidget />
                         </div>
+
+                       
+                            <ol className="breadcrumb">
+                                <li className="breadcrumb-item">
+                                    <Link to={`/category/${category}`}>
+                                        <a>{ category }</a>
+                                    </Link>
+                                </li>
+                                <li className="breadcrumb-item active" aria-current="page">{ titulo }</li>
+                            </ol>
+               
+
                         <h5 className="card-title fw-bold">{ titulo }</h5>
                         <p className="card-text">{ descripcion }</p>
                         <p className="card-text text-success fw-bold"><DiscountWidget discount={ discount }/> UD$ { precio } </p>
@@ -54,7 +65,6 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount }
                     <div className="d-flex justify-content-start">
                         <div className="w-50 p-3">
                             <ButtonItemCounter initial={ 1 } stock={ stock } onAdd={ handleOnAdd }/>
-                            {/* <ButtonAddCart stock={ stock }/> */}
                         </div>
                     </div>
                 </div>
