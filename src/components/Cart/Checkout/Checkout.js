@@ -20,7 +20,7 @@ const Checkout = () => {
                         </div>
                     </div>
                     <div>
-                        <Link to="/checkout">
+                        <Link to="/orderresult">
                             <a className="btn btn-primary mb-3 me-2">Crear orden</a>
                         </Link>
 

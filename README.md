@@ -3,7 +3,9 @@
 Este proyecto fue desarrollado de acuerdo a los conocimientos adquiridos en el curso de React Js en [Coderhouse](https://www.coderhouse.com/online/reactjs) 
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Puedes ver el sitio aquí
+- [DEPLOYED on Vercel](https://my-ecommerce-weld.vercel.app/)
+- [GIF]
 
 ## Funcionalidad del sitio
 

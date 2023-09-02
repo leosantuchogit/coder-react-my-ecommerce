@@ -11,6 +11,7 @@ import Ayuda from "./pages/HelpPage";
 import Error from "./pages/ErrorPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
+import OrderResultPage from "./pages/OrderResultPage";
 import Layout from "./pages/Layout";
 
 import { CartProvider } from "./components/Cart/Context/CartContext";
@@ -25,8 +26,6 @@ import Auth from "./components/Auth/Auth";
 
 
 function App() {
-
-
 
     const [productosList, setProductosList] = useState([]); 
     const productosCollectionRef = collection(db, "productos");
@@ -120,6 +119,7 @@ function App() {
                         <Route path="/producto/:productoId" element={<ProductDetailContainer/>}/>
                         <Route path="/cart" element={<CartPage/>}/>
                         <Route path="/checkout" element={<CheckoutPage/>}/>
+                        <Route path="/orderresult" element={<OrderResultPage />}/>
                         <Route path="entrega" element={<Entrega/>}/>
                         <Route path="contacto" element={<Contacto/>}/>
                         <Route path="ayuda" element={<Ayuda/>}/>
