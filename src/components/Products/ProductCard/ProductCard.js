@@ -34,6 +34,7 @@ function ProductCard (producto) {
                         <button type="button" className="btn btn-primary w-100">Ver detalle</button>
                     </Link>
                 </div>
+
             </div>
      
     )

@@ -6,6 +6,8 @@ import { CartContext } from "../../Cart/Context/CartContext";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
+import ToastDemo from "../../Util/Toast/Toast";
+
 const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount, category }) => {
 
     const [quantityAdded, setQuantityAdded] = useState(0)
@@ -19,7 +21,7 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount, 
        
         // Seteo la cantidad recibida
         setQuantityAdded(quantity)
-        
+
         // Armo un objeto minimo que se va a agregar al carrito.
         const item = {
             id, titulo, precio
@@ -62,6 +64,8 @@ const ProductDetail = ( {id, titulo, descripcion, precio, img, stock, discount, 
                             <ButtonItemCounter initial={ 1 } stock={ stock } onAdd={ handleOnAdd }/>
                         </div>
                     </div>
+
+                    
 
                 </div>
             </div>
