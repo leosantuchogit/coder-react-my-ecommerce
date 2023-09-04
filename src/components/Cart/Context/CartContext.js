@@ -1,7 +1,9 @@
 import { createContext, useState } from "react";
 
 export const CartContext = createContext({
-    cart:[]})
+    cart:[], 
+    totalPrice: () => 0
+})
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
@@ -38,12 +40,20 @@ export const CartProvider = ({ children }) => {
         return cart.some(prod => prod.id === itemId)
     }
 
+    const totalPrice = () => {
+        return cart.reduce((acc, item) => {
+            return acc + (item.precio * item.quantity)
+        }, 0)
+    }
+
+
+
     return (
         
         // Comparto todas las funciones a los componentes hijos: 
         // Todo lo que pongo dentro del "value" lo voy a poder compartir con los children 
 
-        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>
+        <CartContext.Provider value={{ cart, totalPrice, addItem, removeItem, clearCart }}>
             { children }
         </CartContext.Provider>
     )
