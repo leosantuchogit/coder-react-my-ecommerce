@@ -4,8 +4,8 @@ Este proyecto fue desarrollado de acuerdo a los conocimientos adquiridos en el c
 
 
 ## Puedes ver el sitio aquí
-- [DEPLOYED on Vercel](https://my-ecommerce-weld.vercel.app/)
-- [GIF]
+- [Deploy en Vercel](https://my-ecommerce-weld.vercel.app/)
+- [GIF en Google Drive](https://drive.google.com/drive/folders/1kH6SQS2HnuDewvRIc5kZGFUihLgjdmLD?usp=drive_link)
 
 ## Funcionalidad del sitio
 
