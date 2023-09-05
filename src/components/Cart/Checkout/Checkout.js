@@ -1,10 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import CheckoutForm from "./CheckoutForm";
 import { CartContext } from "../Context/CartContext";
 import { db } from "../../../services/firebase/firebase";
 import { Timestamp, collection, addDoc, documentId, getDoc, getDocs, query, where, writeBatch } from "firebase/firestore";
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 const Checkout = () => {
+
+    const MySwal = withReactContent(Swal)
 
     const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState('')
@@ -70,17 +75,28 @@ const Checkout = () => {
 
     }
 
-    if (loading) {
-        return <h1>Se está generando su orden...</h1>
-    }
+    useEffect(() => {
+        if (!loading && orderId) {
+            console.log('Order ID:', orderId);
+            Swal.fire({
+                icon: 'success',
+                title: "Su orden se ha generado correctamente",
+                text: `El id de su pedido es : ${orderId}`,
+                showConfirmButton: true,
+            });
 
-    if (orderId) {
-        return <h1>El id de su orden es: { orderId }</h1>
-    }
+        } else if (loading) {
+            Swal.fire({
+                title: "Generando su pedido..",
+                text: "Espere mientras se genera su ID...",
+                showConfirmButton: false,
+                // timer: 1600
+            });
+        }
+    }, [loading, orderId]);
 
     return (
        <div>
-            <h1>Checkout</h1>
             <CheckoutForm onConfirm={ createOrder } />
        </div>
     )

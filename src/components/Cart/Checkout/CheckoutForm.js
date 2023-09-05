@@ -18,6 +18,7 @@ const CheckoutForm = ({ onConfirm }) => {
     return (
 
         <div className="p-5 text-center  bg-info-subtle">
+            <h1>Checkout</h1>
             <form onSubmit={ handleConfirm } className="Form">
                 <div className="row justify-content-md-center">
                     <div className="col-8 border rounded-3"> 
@@ -42,7 +43,7 @@ const CheckoutForm = ({ onConfirm }) => {
                                 />
                                 <label for="floatingInput">Telefono</label>
                             </div>
-                            <div className="form-floating mb-3">
+                            <div className="form-floating">
                                 <input  type="email" 
                                         class="form-control" 
                                         id="floatingInput" 
@@ -54,16 +55,11 @@ const CheckoutForm = ({ onConfirm }) => {
                             </div>
                         </div>
                         
-                        <div>
-                            <button type="submit" className="btn btn-primary">Crear orden</button>
-                            {/* <Link to="/orderresult">
-                                <a className="btn btn-primary mb-3 me-2">Crear orden</a>
-                            </Link>
+                        
+                    </div>
 
-                            <Link to="/cart">
-                                <a className="btn btn-danger mb-3 me-2">Cancelar</a>
-                            </Link> */}
-                        </div>
+                    <div>
+                        <button type="submit" className="btn btn-primary mt-3" >Crear orden</button>
                     </div>
                 </div>
             </form>
