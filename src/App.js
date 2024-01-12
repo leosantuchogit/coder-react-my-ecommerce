@@ -2,7 +2,7 @@
 
 import "./styles.css";
 
-// Paginas
+// Paginass
 import Home from "./pages/HomePage";
 import StorePage from "./pages/StorePage";
 import Entrega from "./pages/DeliveryPage";
